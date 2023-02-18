@@ -1,0 +1,68 @@
+.hero {
+    height: 200px;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    box-shadow: 0 10px 5px -6px rgba(0, 0, 0, .25);
+    background: url('/assets/site_header.jpg') center 90% no-repeat #000;
+    background-size: cover;
+
+    .logo {
+        display: flex;
+        flex: 1;
+        padding: .5rem 0 0 .5rem;
+        line-height: 4rem;
+        text-indent: 1rem;
+        width: 100%;
+        max-width: 1200px;
+        box-sizing: border-box;
+        font-family: $font_siteHeader, cursive;
+        font-size: 3rem;
+        letter-spacing: 2px;
+        position: relative;
+
+        @media only screen and (min-width: 960px) {
+            font-size: 5rem;
+            letter-spacing: 4px;
+            padding: 1.5rem 0 0 .5rem;
+        }
+
+        span {
+            margin: 0;
+            padding: 0;
+            text-indent: 0;
+
+            /* slightly enlarge the second 'O' in vanooij just for fun */
+            &:nth-of-type(5) {
+                margin: 0 0 0 -10px;
+                font-weight: normal;
+                text-indent: 0;
+                font-size: 120%;
+            }
+
+            /* caption */
+            &:last-of-type {
+                text-indent: .25rem;
+                font-size: .79rem;
+                line-height: 1rem;
+                font-family: $font_sansSerif, serif;
+                letter-spacing: 0;
+                position: absolute;
+                left: 15px;
+                top: 52px;
+                color: $offwhite;
+
+                @media only screen and (min-width: 960px) {
+                    text-indent: 1rem;
+                    border: solid 2px $offwhite;
+                    font-size: 1.33rem;
+                    left: 10px;
+                    top: 85px;
+                    padding: .5rem 1.1rem .5rem 0;
+                }
+            }
+        }
+    }
+}

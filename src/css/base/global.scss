@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    outline: none;
+}
+
+body {
+    background: $gray;
+    width: 100%;
+    height: 100%;
+    font-family: $font_sansSerif, sans-serif;
+    font-size: 16px;
+    line-height: 1.8rem;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font_pageHeader, serif;
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 3rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+}
+
+h3 {
+    font-size: 2rem;
+    line-height: 2rem;
+}
+
+form {
+    padding: 1rem;
+}
+
+label {
+    width: 50%;
+    max-width: 200px;
+    display: inline-block;
+}
+
+input {
+    padding: .5rem;
+    width: 200px;
+    box-sizing: content-box;
+    margin: .5rem 0;
+}
+
+input[type='submit'] {
+    width: auto;
+}
+
+.error {
+    border: dashed 2px $red;
+}
+
+select {
+    padding: .5rem;
+    width: 200px;
+    box-sizing: content-box;
+    margin: .5rem 0;
+
+    &:empty {
+        display: none;
+    }
+}
+
+button {
+    background: $black;
+    color: $white;
+    padding: .5rem 1rem;
+    border: 0;
+    border-radius: .25rem;
+    margin-right: .25rem;
+    width: 150px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.disabled,
+input:disabled {
+    opacity: .5;
+}
+
+.danger {
+    background: $red;
+}
+
+.wrapper {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: stretch;
+}
+
+@keyframes backgroundFill {
+    0% {
+        background-position: 0 bottom;
+        opacity: 1;
+    }
+
+    100% {
+        background-position: 50% bottom;
+        opacity: 1;
+    }
+}
+
+.content {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    color: $darkgray;
+    flex: 1;
+    box-shadow: 0 6px 5px 3px rgba(0, 0, 0, .25);
+    background: url('/assets/background.png') center bottom no-repeat $white;
+    background-size: 200vw 50vw;
+    animation: backgroundFill 1.5s ease-out;
+}
+
+/* hack in left image alignment while figuring out how to pass custom styles on to ckeditor */
+.ck-content .image {
+    margin: unset !important;
+}

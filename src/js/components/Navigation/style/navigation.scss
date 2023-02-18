@@ -1,0 +1,48 @@
+.navMain {
+    display: block;
+    margin: 0 auto;
+    height: 50px;
+    width: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, .8) 20%, rgba(0, 0, 0, 0) 100%);
+    color: #fff;
+    transition: background-color .5s;
+
+    ul {
+        height: 100%;
+        width: auto;
+        text-align: left;
+        white-space: nowrap;
+
+        @media only screen and (min-width: 1200px) {
+            width: 1200px;
+            display: inline-block;
+        }
+
+        li {
+            vertical-align: middle;
+            align-items: center;
+            display: inline-block;
+            height: 100%;
+            padding: .5rem 1rem;
+            box-sizing: border-box;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.navMain__fixed {
+    @extend .navMain;
+
+    position: fixed;
+    background-color: #000;
+    transition: background-color .5s;
+}
+
+.active {
+    background-color: #fff;
+    color: #333;
+    font-weight: bold;
+}

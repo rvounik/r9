@@ -1,0 +1,24 @@
+.facts {
+    margin: 1rem 0;
+    font-size: .8rem;
+    line-height: 1.5rem;
+
+    strong {
+        margin-right: .5rem;
+    }
+}
+
+.backToOverview {
+    display: flex;
+    margin-left: auto;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: $darkgray;
+    font-weight: bold;
+}
+
+.iconStyle {
+    color: $darkgray;
+    font-size: 2rem;
+    margin-top: 1px;
+}

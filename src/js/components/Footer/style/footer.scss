@@ -1,0 +1,54 @@
+.footer {
+    height: 3rem;
+    background: $black;
+    color: $white;
+    text-align: center;
+
+    nav {
+        margin: 0 auto;
+        width: unset;
+        background: $black;
+        max-width: 1200px;
+
+        ul {
+            display: inline-flex;
+            flex-direction: row;
+            margin-left: auto;
+            width: auto;
+            height: 3rem;
+
+            li {
+                margin: 0 1rem;
+
+
+                a {
+                    font-size: 1rem;
+                    color: $lightgray !important;
+                    text-decoration: none;
+                    display: table;
+                    height: 100%;
+
+                    > * {
+                        display: table-cell;
+                        vertical-align: middle;
+                        white-space: nowrap;
+                    }
+
+                    span {
+                        display: none;
+                        padding-left: .5rem;
+
+                        @media only screen and (min-width: 800px) {
+                            display: table-cell;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.iconStyle {
+    font-size: 2rem;
+    margin-top: 3px;
+}

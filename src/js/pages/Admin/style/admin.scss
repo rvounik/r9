@@ -1,0 +1,62 @@
+body {
+    background: $white;
+}
+
+.admin__wrapper {
+
+    /* Flex was chosen over Grid since the layout is not that complex and the alert component can now appear easier */
+    display: flex;
+    flex-direction: column;
+
+    > header {
+        height: 100px;
+        padding: 1rem;
+
+        h1 {
+            font-family: $font_pageHeader;
+            float: left;
+        }
+    }
+
+    nav {
+        height: 50px;
+        display: flex;
+        background: $black;
+        padding: 1rem;
+        box-sizing: border-box;
+
+        li {
+            float: left;
+            color: $white;
+            font-weight: bold;
+            font-family: $font_sansSerif;
+            font-size: 1rem;
+            padding-right: 1rem;
+
+            &.active {
+                color: $red;
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+
+}
+
+main {
+    font-size: 1.25rem;
+    line-height: 2rem;
+    padding: 1rem;
+    font-family: $font_sansSerif;
+
+    header {
+        font-family: $font_pageHeader;
+    }
+}
+
+.button {
+    float: right;
+}

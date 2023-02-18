@@ -1,0 +1,44 @@
+.autoColumns {
+    display: block;
+
+    h3 {
+        margin-top: 1rem;
+    }
+
+    p {
+        display: block;
+        white-space: pre-wrap;
+    }
+
+    figure img {
+        text-align: left;
+    }
+
+    @media only screen and (min-width: 960px) {
+        column-count: 2;
+        column-fill: unset;
+        column-gap: 4rem;
+        column-rule-color: $offwhite;
+        column-rule-style: dashed;
+        column-rule-width: thin;
+        column-span: 1;
+        page-break-inside: avoid;
+    }
+
+    figure {
+        figcaption {
+            background: $darkgray;
+            color: $white;
+            font-size: .8rem;
+            padding: .2rem .6rem;
+            line-height: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        img {
+            display: inline;
+            width: 100%;
+            vertical-align: middle
+        }
+    }
+}
