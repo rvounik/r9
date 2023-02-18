@@ -1,17 +1,17 @@
 # ABOUT
 
-r9 is the ninth revision of my personal website, developed in early 2021. however, it will probably never go public.
+r9 is the ninth revision of my personal website, developed in early 2021. however, it never went public. For me this was
+a learning opportunity to write a complete (frontend + backend) application. Frontend is a SPA using React, backend is an
+API built using Express with Sequelize as an ORM for the MySQL database. Webpack is used as a task runner. Styling is
+using CSS Modules to bundle the SCSS with the JS Comopnents, using various pre- and post-css extensions.
+
+![Alt text](/src/assets/screenshot.png?raw=true "screenshot")
 
 # PREREQUISITES
 
 - yarn 1.22
-- node 12.9
+- node 14
 - mysql 5.7
-
-# DATABASE
-
-DROP DATABASE IF EXISTS r9;
-CREATE DATABASE r9 CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 # MODULES USED
 
@@ -70,20 +70,37 @@ dev dependencies:
 
 first ensure a valid .env exists based on the .env.example_prod or .env.example_dev file. then run these services:
 
+### Install dependencies
+
+- nvm use 14                    : ensure node 14 is used in your currently opened terminal
+- yarn install                  : install dependencies
+
+### Start MySQL
+
+(see note on MySQL clashes below)
+
+- brew services start mysql@5.7
+
+# Create the database (if not exists)
+
+- connect to your local MySQL instance (see credentials in .env) and run the following:
+
+DROP DATABASE IF EXISTS r9;
+CREATE DATABASE r9 CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+See 'Fresh start' note regarding running migrations
+
 ### Backend
 
-- nvm use 12.9                  : ensure node 12.9 is used in your currently opened terminal!
 - yarn run start                : this will start the backend express server
-
-### Frontend
-
-- nvm use 12.9                  : ensure node 12.9 is used in your currently opened terminal!
-- php -S 127.0.0.1:9010 -t web/ : use any web server like XAMPP or PHP to serve the frontend from the web/ folder
 
 ### Builder
 
-- nvm use 12.9                  : ensure node 12.9 is used in your currently opened terminal!
-- yarn run build:dev --watch    : build sources and enable watcher
+- yarn run build:dev --watch    : build sources and enable watcher (optional)
+
+### Frontend
+
+- php -S 127.0.0.1:9010 -t web/ : use any web server like XAMPP or PHP to serve the frontend from the web/ folder
 
 ## Folder structure
 
@@ -122,7 +139,7 @@ note that this is a dangerous command, use it with care.
 
 after you have run this, ensure you register for the admin pages by going to /register (the default user wont work)
 
-## MySQL
+## Note on MySQL clashes
 
 just as a side note, to prevent clashing (port or credentials) with running Dockerised MySQL instances:
 
