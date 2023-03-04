@@ -18,7 +18,7 @@ class Hero extends Component {
                     <span>.</span>
                     <span>N</span>
                     <span>L</span>
-                    <span>RESTROSPECTIVE ON 40 YEARS OF GAMING</span>
+                    <span>RETROSPECTIVE ON 40 YEARS OF GAMING</span>
                 </h1>
 
                 { this.props.children || null }

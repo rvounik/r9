@@ -77,7 +77,7 @@ first ensure a valid .env exists based on the .env.example_prod or .env.example_
 
 ### Start MySQL
 
-(see note on MySQL clashes below)
+if you dont have mysql running yet (dockerised or not) you can run:
 
 - brew services start mysql@5.7
 
@@ -137,19 +137,12 @@ defined models, and run the available migrations and seeders:
 
 note that this is a dangerous command, use it with care.
 
+you can also create the database yourself, run the migrations and then the seed:
+
+`yarn sequelize-cli db:migrate`
+`yarn run db-seed:dev`
+
 after you have run this, ensure you register for the admin pages by going to /register (the default user wont work)
-
-## Note on MySQL clashes
-
-just as a side note, to prevent clashing (port or credentials) with running Dockerised MySQL instances:
-
-- docker(-compose) stop mysql (this will stop any running Dockerised instances of MySQL)
-- brew services start mysql (this will start the local MySQL instance that r9 uses)
-
-and the other way around:
-
-- brew services stop mysql
-- docker start mysql
 
 ## CSS
 

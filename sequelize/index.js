@@ -2,7 +2,7 @@ require('dotenv').config();
 const { Sequelize } = require('sequelize');
 const { applyExtraSetup } = require('./extra-setup');
 
-const sequelize = new Sequelize(`mysql://${process.env.DB_USER}@${process.env.DB_HOST}/${process.env.DB_NAME}`, {
+const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS, {
 	dialect: 'mysql',
     define: {
         freezeTableName: true //prevent Sequelize from pluralizing table names
